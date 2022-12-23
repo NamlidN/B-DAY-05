@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <br>
+    <a class="BOX" href="/">Home </a>
+
+    <br>
+
+    <h1>Contact</h1>
+    <input type="text">
+    <input type="button">
+    <input type="checkbox">
+    <input type="color">
+    <input type="date">
+    <input type="datetime">
+    <input type="datetime-local">
+    <input type="email">
+    <input type="file">
+    <input type="hidden">
+    <input type="image">
+    <input type="month">
+    <input type="number">
+    <input type="password">
+    <input type="radio">
+    <input type="range">
+    <input type="reset">
+    <input type="search">
+    <input type="submit">
+    <input type="tel">
+    <input type="time">
+    <input type="url">
+    <input type="week">
+   
+
+    <div>
+        <div id="grid">
+            <img id="anchor" src="kopf.png" alt="">
+            <div id="eyes">
+                <img class="eye" src="eyerichtig.png" style="top: 10px; right: 55px;">
+                <img class="eye" src="eyerichtig.png" style="top: -60px; right: -15px;">
+            </div>
+        </div>
+        <div>
+
+
+
+            <div>
+
+            </div>
+</body>
+<script>
+    document.addEventListener("mousemove", (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        const anchor = document.getElementById('anchor');
+        const rekt = anchor.getBoundingClientRect();
+        const anchorX = rekt.left + rekt.width / 2;
+        const anchorY = rekt.top + rekt.height / 2;
+
+        const angelDeg = angel(mouseX, mouseY, anchorX, anchorY);
+
+        console.log(angelDeg);
+
+        const eyes = document.querySelectorAll(".eye");
+        eyes.forEach(eye => {
+            eye.style.transform = `rotate(${90 + angelDeg}deg)`;
+        });
+    });
+    function angel(cx, cy, ex, ey) {
+        const dy = ey - cy;
+        const dx = ex - cx;
+        const rad = Math.atan2(dy, dx);
+        const deg = rad * 180 / Math.PI;
+        return deg;
+    }
+
+</script>
+
+</html>
