@@ -178,3 +178,20 @@ a{
     font-size: 25pt;
 
 }
+.GRGR{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+
+}
+.GRGR img{
+    width: 10rem;
+    height: 15rem;
+ margin: 2rem;
+    
+
+}
